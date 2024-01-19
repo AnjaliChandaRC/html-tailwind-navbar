@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!--======== NAVBAR-SECTION ========-->
+    <nav class="w-full z-50 relative">
+      <div class="max-w-[1164px] mx-auto px-10">
+        <div class="flex justify-between items-center sm:py-[26px] py-4">
+          <a href="#" class="text-black">
+            <!-- <img
+              src="./assets/images/svg/page_logo.svg"
+              alt="page logo"
+              class="w-[246px] h-[29px]"
+            /> -->
+            logo
+          </a>
+          <div class="hidden lg:flex items-center">
+            <ul class="flex items-center gap-6">
+              <li class="relative">
+                <a
+                  href="#"
+                  class="text-black before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#61C0BF] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-sm font-normal leading-[150%] hover:opacity-100 opacity-70"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="relative">
+                <a
+                  href="#service"
+                  class="text-black before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#61C0BF] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-sm font-normal leading-[150%] hover:opacity-100 opacity-70"
+                >
+                  Services
+                </a>
+              </li>
+              <li class="relative">
+                <a
+                  href="#work"
+                  class="text-black before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#61C0BF] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-sm font-normal leading-[150%] hover:opacity-100 opacity-70"
+                >
+                  How It Works
+                </a>
+              </li>
+              <li class="relative">
+                <a
+                  href="#about"
+                  class="text-black before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#61C0BF] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-sm font-normal leading-[150%] hover:opacity-100 opacity-70"
+                >
+                  About Us
+                </a>
+              </li>
+            </ul>
+            <button
+              class="bg-[#61C0BF] ms-10 w-[120px] h-[48px] flex justify-center ff_plus_jakarata text-sm font-semibold leading-[1] text-white items-center rounded-lg leading-[1] font-semibold pulse"
+            >
+              Contact
+            </button>
+          </div>
+          <div
+            id="toggleNavButton"
+            onclick="onclickNavOpens()"
+            class="group lg:hidden cursor-pointer"
+          >
+            <span
+              class="h-[0.15rem] w-8 rounded block bg-[#5CBDBC] text-black"
+            ></span>
+            <span
+              class="h-[0.15rem] w-6 group-hover:w-8 group-hover:duration-500 duration-500 rounded block my-2 bg-[#5CBDBC] text-white"
+            ></span>
+            <span
+              class="h-[0.15rem] w-8 rounded block bg-[#5CBDBC] text-black"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <!--===== NAV OVERLAY STARTS ====-->
+      <div
+        id="overlay_showing_navbar"
+        class="duration-300 min-h-screen w-0 duration-400 z-30 fixed top-0 lg:hidden"
+      >
+        <button
+          onclick="onclickCloseNav()"
+          class="absolute right-0 sm:right-4 top-5 mr-4 sm:mr-0"
+        >
+          <svg
+            width="34"
+            height="34"
+            viewBox="0 0 39 39"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              y="5"
+              width="7"
+              height="47.4498"
+              rx="3.5"
+              transform="rotate(-45 0 5)"
+              fill="white"
+            />
+            <rect
+              x="34"
+              width="7"
+              height="47.3805"
+              rx="3.5"
+              transform="rotate(45 34 0)"
+              fill="white"
+            />
+          </svg>
+        </button>
+        <div
+          id="overlay_navbar_item"
+          class="hidden flex-col justify-center items-center bg-black h-screen"
+        >
+          <ul class="flex flex-col items-center gap-6">
+            <li onclick="onclickCloseNav()" class="relative">
+              <a
+                href="#"
+                class="text-white before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#fff] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-[20px] font-normal leading-[150%]"
+              >
+                Home
+              </a>
+            </li>
+            <li onclick="onclickCloseNav()" class="relative">
+              <a
+                href="#service"
+                class="text-white before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#fff] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-[20px] font-normal leading-[150%]"
+              >
+                Services
+              </a>
+            </li>
+            <li onclick="onclickCloseNav()" class="relative">
+              <a
+                href="#work"
+                class="text-white before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#fff] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-[20px] font-normal leading-[150%]"
+              >
+                How It Works
+              </a>
+            </li>
+            <li onclick="onclickCloseNav()" class="relative">
+              <a
+                href="#about"
+                class="text-white before:transition-all before:duration-300 before:ease-in-out before:absolute before:w-0 hover:before:w-full before:h-[2px] before:bg-[#fff] before:bottom-0 before:start-0 before:content-[''] ff_plus_jakarata text-[20px] font-normal leading-[150%]"
+              >
+                About Us
+              </a>
+            </li>
+          </ul>
+          <button
+            class="bg-[#fff] mt-6 w-[120px] h-[48px] flex justify-center ff_plus_jakarata text-sm font-semibold leading-[1] text-[#5CBDBC] items-center rounded-lg leading-[1] font-semibold pulse_white"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </nav>
+  </body>
+
+  <script>
+    //  <!-- ------------NAV-BAR--------------- -->
+    var opennav = document.getElementById("overlay_showing_navbar");
+    var navbarItem = document.getElementById("overlay_navbar_item");
+    function onclickNavOpens() {
+      opennav.classList.remove("w-0");
+      opennav.classList.add("w-full");
+      navbarItem.classList.remove("hidden");
+      navbarItem.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+    }
+    function onclickCloseNav() {
+      opennav.classList.add("w-0");
+      opennav.classList.remove("w-full");
+      navbarItem.classList.add("hidden");
+      navbarItem.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+    }
+  </script>
+</html>
